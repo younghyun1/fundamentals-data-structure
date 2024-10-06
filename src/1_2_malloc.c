@@ -2,19 +2,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define MALLOC(p, s)                              \
+    do {                                          \
+        (p) = malloc((s));                        \
+        if (!(p)) {                               \
+            fprintf(stderr, "Memory allocation failed\n"); \
+            exit(EXIT_FAILURE);                   \
+        }                                         \
+    } while (0)
+
 int main (void) {
     int32_t* pi;
     float* pf;
 
-    if (!(pi = (int32_t*) malloc(sizeof (int32_t)))) { // lmao, NULL == 0 == false
-        fprintf(stderr, "Memory allocation failed for 'pi'\n");
-        exit(EXIT_FAILURE);
-    }
-
-    if (!(pf = (float*) malloc(sizeof (float)))) { // lmao, NULL == 0 == false
-        fprintf(stderr, "Memory allocation failed for 'pf'\n");
-        exit(EXIT_FAILURE);
-    };
+    MALLOC(pi, sizeof(int32_t));
+    MALLOC(pf, sizeof(float));
 
     *pi = 1024;
     *pf = 3.14;
