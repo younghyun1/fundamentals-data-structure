@@ -6,7 +6,7 @@ int main (void) {
     int32_t* pi;
     float* pf;
 
-    if (!(pi = (int32_t*) malloc(sizeof (int32_t)))) {
+    if (!(pi = (int32_t*) malloc(sizeof (int32_t)))) { // lmao, NULL == 0 == false
         fprintf(stderr, "Memory allocation failed for 'pi'\n");
         exit(EXIT_FAILURE);
     }
