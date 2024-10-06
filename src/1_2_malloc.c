@@ -6,12 +6,12 @@ int main (void) {
     int32_t* pi;
     float* pf;
 
-    if ((pi = (int32_t*) malloc(sizeof (int32_t))) == NULL) {
+    if (!(pi = (int32_t*) malloc(sizeof (int32_t)))) {
         fprintf(stderr, "Memory allocation failed for 'pi'\n");
         exit(EXIT_FAILURE);
     }
 
-    if ((pf = (float*) malloc(sizeof (float))) == NULL) {
+    if (!(pf = (float*) malloc(sizeof (float)))) {
         fprintf(stderr, "Memory allocation failed for 'pf'\n");
         exit(EXIT_FAILURE);
     };
