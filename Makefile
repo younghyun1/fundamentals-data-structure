@@ -24,7 +24,9 @@ $(BIN_DIR)/%: $(SRC_DIR)/%.c
 # Run all binaries
 run: build
 	@for bin in $(BINARIES); do \
-		echo "Running $$bin"; \
+	echo ""; \
+	echo "Running $$bin"; \
+	echo ""; \
 		./$$bin; \
 	done
 
