@@ -49,15 +49,11 @@ uint32_t get_smallest_and_pop(uint32_t* array, size_t* len) {
             smallest_index = i;
         }
     }
-
-    // Shift elements to "pop" the smallest one
+    
     for (size_t i = smallest_index; i < *len - 1; i++) {
         array[i] = array[i + 1];
     }
-
-    // Decrease length since one element was removed
     (*len)--;
-
-    // Return the smallest element
+    
     return smallest;
 }
