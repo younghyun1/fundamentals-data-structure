@@ -11,7 +11,7 @@ int main (void) {
         exit(EXIT_FAILURE);
     }
 
-    if (!(pf = (float*) malloc(sizeof (float)))) {
+    if (!(pf = (float*) malloc(sizeof (float)))) { // lmao, NULL == 0 == false
         fprintf(stderr, "Memory allocation failed for 'pf'\n");
         exit(EXIT_FAILURE);
     };
